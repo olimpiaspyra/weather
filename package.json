@@ -3,11 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "webpack serve --mode=development",
+    "build": "webpack --mode=production",
+    "dev:watch": "yarn run start -o --watch",
+    "refactor:format": "prettier --write \"src/**/*.{js,jsx,html,scss}\"",
+    "refactor:lint": "eslint --fix \"src/**/*.{js,jsx}\"",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "eject": "react-scripts eject"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "yarn eslint"
+    ],
+    "src/**/*.{css,scss}": [
+      "yarn refactor:format"
+    ]
   },
   "browserslist": {
     "production": [
