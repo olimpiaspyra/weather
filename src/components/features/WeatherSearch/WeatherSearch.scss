@@ -1,0 +1,29 @@
+@use './../../../styles/settings.scss' as *;
+
+.weather__search__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather__search__input {
+  background: linear-gradient(60deg, #e35c91, #59a1eb);
+  border: 1px solid #0a4377;
+  border-radius: 5px;
+  box-shadow: 3px 3px 6px #010911, -2px -2px 6px #0f60a8;
+  color: $text-color;
+  height: 50px;
+  width: 300px;
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
+.buttons {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: 3px 3px 8px #010911, -2px -3px 4px #0a4377;
+  height: 40px;
+  width: 40px;
+  margin: 0 5px 0 8px;
+}

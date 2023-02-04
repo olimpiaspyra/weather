@@ -1,0 +1,11 @@
+.weather__weekly__list {
+  list-style: none;
+}
+
+.weather__weekly__list__item {
+  margin: 0 12px;
+  padding: 3px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: 5px 5px 8px #010911, -3px -3px 5px #0a4377;
+}
