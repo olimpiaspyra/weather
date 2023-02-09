@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
+import {ColorRing} from 'react-loader-spinner';
+
 import humidityicon from '../../../assets/images/humidity.png';
 import windicon from '../../../assets/images/wind.png';
 import conditionsicon from '../../../assets/images/conditions.png';
@@ -94,7 +96,21 @@ const DailyForecast = ({defaultCity}) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${apiKey}&units=metric`;
     axios.get(url).then(handleResponse);
 
-    return 'Loading...';
+    return (
+      <div className='spinner'>
+        <p>Loading...</p>
+        <ColorRing
+          visible={true}
+          height='80'
+          width='80'
+          ariaLabel='blocks-loading'
+          wrapperStyle={{}}
+          wrapperClass='blocks-wrapper'
+          colors={['#e35c91', '#59a1eb', '#e35c91', '#59a1eb', '#e35c91', '#59a1eb']}
+          text-align='center'
+        />
+      </div>
+    );
   }
 };
 
