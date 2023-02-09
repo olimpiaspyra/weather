@@ -11,7 +11,7 @@ function App() {
     <MainLayout>
       <WeatherContainer>
         <WeatherSearch />
-        <DailyForecast />
+        <DailyForecast defaultCity='Chorzów' />
         <WeeklyForecast />
       </WeatherContainer>
     </MainLayout>
