@@ -4,12 +4,15 @@ import axios from 'axios';
 
 import {ColorRing} from 'react-loader-spinner';
 
+import FormatDate from '../FormatDate/FormatDate';
+
 import humidityicon from '../../../assets/images/humidity.png';
 import windicon from '../../../assets/images/wind.png';
 import conditionsicon from '../../../assets/images/conditions.png';
 import descriptionicon from '../../../assets/images/description.png';
 
 import './DailyForecast.scss';
+
 
 const DailyForecast = ({defaultCity}) => {
   const [weather, setWeather] = useState({ready: false});
@@ -24,6 +27,8 @@ const DailyForecast = ({defaultCity}) => {
       wind: res.data.wind.speed,
       max: res.data.main.temp_max,
       min: res.data.main.temp_min,
+      timezone: res.data.timezone,
+      date: new Date(res.data.dt * 1000),
     });
     console.log(res);
   };
@@ -34,7 +39,7 @@ const DailyForecast = ({defaultCity}) => {
         <h1 className='weather__daily__city p-3 text-uppercase'>{weather.city}</h1>
         <div className='weather__daily__content row justify-content-md-center'>
           <div className='weather__daily__content__left col-6 my-4 row align-items-center mx-0'>
-            <h2 className='weather__daily__content__left__date px-3'>Monday 17:56</h2>
+            <h2 className='weather__daily__content__left__date px-3'><FormatDate date={weather.date}/></h2>
             <h3 className='weather__daily__content__left__temperature px-3'>
               {Math.round(weather.temp)}°C
             </h3>
