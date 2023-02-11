@@ -43,6 +43,7 @@ const DailyForecast = ({defaultCity}) => {
   const handleSubmit = e => {
     e.preventDefault();
     search();
+    e.target.reset();
   };
 
   const handleCityChange = e => {
