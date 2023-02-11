@@ -27,6 +27,15 @@
   height: 40px;
   width: 40px;
   margin: 0 5px 0 8px;
+
+  &:hover {
+    box-shadow: inset 3px 3px 8px #010911, inset -2px -3px 4px #0a4377;
+  }
+}
+
+.weather__search__icon {
+  font-size: 2.2rem;
+  color: $text-color;
 }
 
 .spinner {

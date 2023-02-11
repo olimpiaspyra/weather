@@ -8,7 +8,6 @@ import FormatDate from '../FormatDate/FormatDate';
 
 import humidityicon from '../../../assets/images/humidity.png';
 import windicon from '../../../assets/images/wind.png';
-import conditionsicon from '../../../assets/images/conditions.png';
 import descriptionicon from '../../../assets/images/description.png';
 
 import './DailyForecast.scss';
@@ -71,7 +70,7 @@ const DailyForecast = ({defaultCity}) => {
               </h3>
             </div>
             <div className='weather__daily__content__right col-6 d-flex justify-content-center my-4'>
-              <img src={conditionsicon} alt='image' className='mainIcon' />
+              <img src={require(`../../../assets/images/10d.png`).default} alt='image' className='mainIcon' />
             </div>
             <div className='weather__daily__content__main row mt-4 mx-0'>
               <ul className='weather__daily__content__main__list col-6'>

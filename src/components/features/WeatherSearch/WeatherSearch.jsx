@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faSearchengin} from '@fortawesome/free-brands-svg-icons';
+
 import './WeatherSearch.scss';
 
 const WeatherSearch = ({handleSubmit, handleCityChange, city}) => {
@@ -15,11 +18,10 @@ const WeatherSearch = ({handleSubmit, handleCityChange, city}) => {
             value={city}
             onChange={handleCityChange}
           />
-          <button type='submit' className='weather__search__button buttons'></button>
+          <button type='submit' className='weather__search__button buttons'>
+            <FontAwesomeIcon icon={faSearchengin} className='weather__search__icon' />
+          </button>
         </form>
-      </div>
-      <div className='weather__location col-2 d-flex justify-content-center'>
-        <button className='weather__location__button buttons'></button>
       </div>
     </div>
   );
