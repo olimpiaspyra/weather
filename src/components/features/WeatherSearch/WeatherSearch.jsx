@@ -1,16 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './WeatherSearch.scss';
 
-const WeatherSearch = () => {
+const WeatherSearch = ({handleSubmit, handleCityChange}) => {
+
   return (
     <div className='weather__search row justify-content-center align-items-center'>
       <div className='weather__search__bar col-8'>
-        <form action='' className='weather__search__form '>
+        <form action='' className='weather__search__form' onSubmit={handleSubmit}>
           <input
             type='text'
             placeholder='Enter a city...'
             className='weather__search__input'
+            onChange={handleCityChange}
           />
           <button type='submit' className='weather__search__button buttons'></button>
         </form>
@@ -20,6 +23,11 @@ const WeatherSearch = () => {
       </div>
     </div>
   );
+};
+
+WeatherSearch.propTypes = {
+  handleSubmit: PropTypes.func,
+  handleCityChange: PropTypes.func,
 };
 
 export default WeatherSearch;
