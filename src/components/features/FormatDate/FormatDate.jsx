@@ -24,7 +24,7 @@ const FormatDate = ({date}) => {
     minutes = `0${minutes}`;
   }
 
-  console.log(date);
+  // console.log(date);
 
   return <p>{`${day} ${hours}:${minutes}`}</p>;
 };

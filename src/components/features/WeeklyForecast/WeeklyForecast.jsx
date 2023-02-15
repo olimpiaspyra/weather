@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
@@ -15,6 +15,13 @@ const WeeklyForecast = ({coordinates}) => {
     setLoaded(true);
     console.log(res);
   };
+
+  useEffect(() => {
+    setLoaded(false);
+    return () => {
+      setForecast(null);
+    };
+  }, [coordinates]);
 
   if (loaded) {
     return (
