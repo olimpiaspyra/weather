@@ -1,0 +1,23 @@
+.weather__weekly__list {
+  padding: 0;
+  font-size: 2rem;
+}
+
+.weather__weekly__list__item {
+  margin: 0 12px;
+  padding: 3px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: 5px 5px 8px #010911, -3px -3px 5px #0a4377;
+  text-align: center;
+  font-weight: 700;
+}
+
+.day__icons {
+  width: 50px;
+  height: 50px;
+}
+
+.weather__weekly__list__item__temp {
+  font-size: 1.3rem;
+}

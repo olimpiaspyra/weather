@@ -8,6 +8,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSearchengin} from '@fortawesome/free-brands-svg-icons';
 
 import DailyForecast from '../DailyForecast/DailyForecast';
+import WeeklyForecast from '../WeeklyForecast/WeeklyForecast';
 
 import './WeatherSearch.scss';
 
@@ -28,6 +29,7 @@ const WeatherSearch = ({defaultCity}) => {
       timezone: res.data.timezone,
       date: new Date(res.data.dt * 1000),
       coordinates: res.data.coord,
+      icon: res.data.weather[0].icon,
     });
     console.log(res);
   };
@@ -70,6 +72,7 @@ const WeatherSearch = ({defaultCity}) => {
           </div>
         </div>
         <DailyForecast weather={weather} />
+        <WeeklyForecast coordinates={weather.coordinates} />
       </>
     );
   } else {

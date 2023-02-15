@@ -3,15 +3,10 @@ import PropTypes from 'prop-types';
 
 import FormatDate from '../FormatDate/FormatDate';
 
-import humidityicon from '../../../assets/images/humidity.png';
-import windicon from '../../../assets/images/wind.png';
-import descriptionicon from '../../../assets/images/description.png';
-
 import './DailyForecast.scss';
 
 const DailyForecast = ({weather}) => {
-
-  const {city, date, temp, description, humidity, wind, max, min} = weather;
+  const {city, date, temp, description, humidity, wind, max, min, icon} = weather;
 
   return (
     <div className='weather__daily'>
@@ -27,42 +22,34 @@ const DailyForecast = ({weather}) => {
         </div>
         <div className='weather__daily__content__right col-6 d-flex justify-content-center my-4'>
           <img
-            src={require(`../../../assets/images/10d.png`).default}
+            src={require(`../../../assets/images/${icon}.png`).default}
             alt='image'
             className='mainIcon'
           />
         </div>
-        <div className='weather__daily__content__main row mt-4 mx-0'>
+        <div className='weather__daily__content__main row mt-4 mx-0 text-align-center'>
           <ul className='weather__daily__content__main__list col-6'>
             <li className='weather__daily__content__main__list__item__conditions row p-3'>
-              <div className='weather__daily__content__main__list__item__icons col-3'>
-                <img src={descriptionicon} alt='weather icon' className='icons' />
-              </div>
               <div className='weather__daily__content__main__list__item__text col-9'>
-                {description}
+                <strong className='text-capitalize'>{description}</strong>
               </div>
             </li>
             <li className='weather__daily__content__main__list__item__humidity row p-3'>
-              <div className='weather__daily__content__main__list__item__icons col-3'>
-                <img src={humidityicon} alt='humidity icon' className='icons' />
-              </div>
               <div className='weather__daily__content__main__list__item__text col-9'>
+                <strong>Humidity:&nbsp;</strong>
                 {humidity}%
               </div>
             </li>
             <li className='weather__daily__content__main__list__item__wind row p-3'>
-              <div className='weather__daily__content__main__list__item__icons col-3'>
-                <img src={windicon} alt='wind icon' className='icons' />
-              </div>
               <div className='weather__daily__content__main__list__item__text col-9'>
-                {Math.round(wind)} km/h
+                <strong>Wind:&nbsp;</strong> {Math.round(wind)} km/h
               </div>
             </li>
           </ul>
           <ul className='weather__daily__content__main__list col-4 p-3'>
             <li className='weather__daily__content__main__list__item row p-3'>
               <p className='weather__daily__content__main__list__item__temp col-4'>
-                Max
+                <strong>Max</strong>
               </p>
               <div className='weather__daily__content__main__list__item_temp col-8'>
                 {Math.round(max)}°
@@ -70,7 +57,7 @@ const DailyForecast = ({weather}) => {
             </li>
             <li className='weather__daily__content__main__list__item row p-3'>
               <p className='weather__daily__content__main__list__item__temp col-4'>
-                Min
+                <strong>Min</strong>
               </p>
               <div className='weather__daily__content__main__list__item__temp col-8'>
                 {Math.round(min)}°
