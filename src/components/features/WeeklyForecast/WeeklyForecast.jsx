@@ -19,7 +19,14 @@ const WeeklyForecast = ({coordinates}) => {
   if (loaded) {
     return (
       <div className='weather__weekly'>
-        <ForecastByDay data={forecast[0]} />
+        <div className='weather__weekly row justify-content-md-center'>
+          {forecast.map((forecast, index) => {
+            if (index > 0 && index < 7) {
+              return <ForecastByDay key={index} data={forecast} />;
+            }
+            return null;
+          })}
+        </div>
       </div>
     );
   } else {
