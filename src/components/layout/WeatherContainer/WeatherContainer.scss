@@ -7,3 +7,9 @@
   padding: 30px;
   width: 650px;
 }
+
+@media (max-width: 767px) {
+  .weather__container {
+    width: auto;
+  }
+}

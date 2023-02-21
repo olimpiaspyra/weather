@@ -7,7 +7,7 @@ import './MainLayout.scss';
 
 const MainLayout = ({children}) => {
   return (
-    <Container className='container' fluid='md'>
+    <Container className='container'>
       {children}
     </Container>
   );

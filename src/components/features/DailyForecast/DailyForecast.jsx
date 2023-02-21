@@ -52,7 +52,7 @@ const DailyForecast = ({weather}) => {
                 <strong>Max</strong>
               </p>
               <div className='weather__daily__content__main__list__item_temp col-8'>
-                {Math.round(max)}°
+                {Math.round(max)}°C
               </div>
             </li>
             <li className='weather__daily__content__main__list__item row p-3'>
@@ -60,7 +60,7 @@ const DailyForecast = ({weather}) => {
                 <strong>Min</strong>
               </p>
               <div className='weather__daily__content__main__list__item__temp col-8'>
-                {Math.round(min)}°
+                {Math.round(min)}°C
               </div>
             </li>
           </ul>
